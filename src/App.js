@@ -28,11 +28,32 @@ class App extends React.Component {
     // Will be useful when an input box is added
   }
 
+  handleChanges = e => {
+    this.setState ({ username: e.target.value });
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    axios.get(`${API_BASE_URL}/users/${this.state.username}`)
+    .then(res => {
+      this.setState({ userinfo: res.data })
+    })
+    .catch(err => console.error("cDU error:", err));
+  }
+
   render () {
     return (
       <div className="App">
+        <header className="App-header">
+          <input
+            type="text"
+            value={this.state.username}
+            onChange={this.handleChanges}
+          />
+          <button onClick={this.handleSubmit}>Search</button>
+        </header>
         <h1>{`GitHub presents ${this.state.userinfo.name}`}</h1>
-        <img src={`http://ghchart.rshah.org/${GITHUB_USERNAME}`}
+        <img src={`http://ghchart.rshah.org/${this.state.username}`}
           alt="Github calendar graph"></img>
         <h2>Followers</h2>
         <UserFriends friendsUrl={this.state.userinfo.followers_url} />
