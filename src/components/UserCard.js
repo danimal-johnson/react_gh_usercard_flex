@@ -5,7 +5,10 @@ const UserCard = props => {
     console.log(props);
     return (
       <div className="card">
-        <p>{props.person.login}</p>
+        <img src={props.person.avatar_url} alt="" />
+        <div className="username">
+          <a href={props.person.html_url}>{props.person.login}</a>
+        </div>
       </div>
     )
 
