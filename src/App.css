@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header input {
+  margin: 10px;
+  padding: .4rem;
+}
+
+.App-header button {
+  padding: .4rem;
+}
+
+.App-link {
+  color: #09d3ac;
+}
