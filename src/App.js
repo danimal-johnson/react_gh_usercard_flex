@@ -34,7 +34,8 @@ class App extends React.Component {
         <h1>{`GitHub presents ${this.state.userinfo.name}`}</h1>
         <img src={`http://ghchart.rshah.org/${GITHUB_USERNAME}`}
           alt="Github calendar graph"></img>
-          <UserFriends friendsUrl={this.state.userinfo.name} />
+        <h2>Followers</h2>
+        <UserFriends friendsUrl={this.state.userinfo.followers_url} />
       </div>
     );
   }
